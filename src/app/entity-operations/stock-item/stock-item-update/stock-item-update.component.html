@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <form [formGroup]="stockItemForm" autocomplete="off" novalidate (ngSubmit)="updateStockItem(stockItemForm.value)">
+    <div class="form-horizontal well">
+
+<div class="form-group">
+  <label for="stockItemName" class="control-label col-md-2">Name of Stock Item: </label>
+  <div class="col-md-5">
+   <input type="text" formControlName="stockItemName" id="stockItemName" class="form-control" />
+  </div>
+
+  <div class="col-md-5">
+   <em *ngIf="validateControl('stockItemName') && hasError('stockItemName', 'required')">Name is required</em>
+    <em *ngIf="validateControl('stockItemName') && hasError('stockItemName', 'maxlength')">Maximum allowed length is 60 characters.</em>
+  </div>
+</div>
+ 
+<div class="form-group">
+  <label for="dateOfCreation" class="control-label col-md-2">Date of Creation: </label>
+  <div class="col-md-5">
+    <input type="text" formControlName="dateOfCreation" id="dateOfCreation" class="form-control" appDatepicker 
+          (change)="executeDatePicker($event)" readonly />
+  </div>
+  <div class="col-md-5">
+    <em *ngIf="validateControl('dateOfCreation') && hasError('dateOfCreation', 'required')">Date of birth is required</em>
+  </div>
+</div>
+ 
+<div class="form-group">
+  <label for="searchDetails" class="control-label col-md-2">searchDetails: </label>
+  <div class="col-md-5">
+    <input type="text" formControlName="searchDetails" id="searchDetails" class="form-control" />
+  </div>
+  <div class="col-md-5">
+    <em *ngIf="validateControl('searchDetails') && hasError('searchDetails', 'required')">Details is required</em>
+    <em *ngIf="validateControl('searchDetails') && hasError('searchDetails', 'maxlength')">Maximum allowed length is 100 characters.</em>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-offset-5 col-md-1">
+    <button type="submit" class="btn btn-info" [disabled]="!stockItemForm.valid">Update</button>
+  </div>
+  <div class="col-md-1">
+    <button type="button" class="btn btn-danger" (click)="redirectToStockItemList()">Cancel</button>
+  </div>
+</div>
+
+</div>
+</form>
+
+<app-success-modal [modalHeaderText]="'Success message'" 
+[modalBodyText]="'Action completed successfully'" 
+[okButtonText]="'OK'" 
+(redirectOnOK)="redirectToStockItemList()"></app-success-modal>
+
+<app-error-modal [modalHeaderText]="'Error message'" 
+[modalBodyText]="errorMessage" 
+[okButtonText]="'OK'"></app-error-modal>
+
+</div>

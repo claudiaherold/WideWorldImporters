@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WorldWideImporters
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# WideWorldImporters
+Angular 7 App with NET.CORE 2 Web.Api Backend
+>>>>>>> 07e4c14eaf7147e9383f09e825e26e04eebe8b2f

@@ -1,0 +1,39 @@
+ <div class="row">
+  <div class="col-md-offset-10 col-md-2">
+    <a [routerLink]="['/stock/create']">Create Stock Item</a>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Stock item name</th>
+            <th>Production Date</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          	
+          <tr *ngFor="let item of stockitems">
+            <td>{{item.stockItemName}}</td>
+           <td>{{item.validFrom | date: 'dd/MM/yyyy'}}</td> 
+             <td>
+              <button type="button" id="details" class="btn btn-default" (click)="getStockItemDetails(item.stockItemID)">Details</button>
+            </td>
+            <td>
+              <button type="button" id="update" class="btn btn-success" (click)="redirectToUpdatePage(item.stockItemID)">Update</button>
+            </td>
+            <td>
+              <button type="button" id="delete" class="btn btn-danger" (click)="redirectToDeletePage(item.stockItemID)">Delete</button>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> 

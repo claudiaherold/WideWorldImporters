@@ -1,0 +1,57 @@
+<div class="well">
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Stock Item name:</strong>
+    </div>
+    <div class="col-md-3">
+      {{stockItem?.stockItemName}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Expiration Date:</strong>
+    </div>
+    <div class="col-md-3">
+      {{stockItem?.validTo | date: 'dd/MM/yyyy'}}
+    </div>
+  </div>
+  <!-- <div class="row" *ngIf='stockItem?.tags; else templateTags'>  -->
+    <div class=row>
+    <div class="row">
+    <div class="col-md-3">
+      <strong>Type of item:</strong>
+    </div>
+    <div class="col-md-3">
+      <span class="text-info">{{stockItem?.tags}}</span>
+    </div>
+  </div>
+   <!-- <ng-template #templateTags>
+    <div class="row">
+      <div class="col-md-3">
+        <strong>Type of item:</strong>
+      </div>
+      <div class="col-md-3">
+        <span class="text-success">  No tiene Tags</span>
+      </div>
+    </div>
+  </ng-template>
+</div> 
+  -->
+<!-- <div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of stockItem?.tags">
+            <td>{{item}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
