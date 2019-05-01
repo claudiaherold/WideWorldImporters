@@ -1,18 +1,23 @@
  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active" 
+      <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}"> World Wild Importers Home</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li>
-        <a [routerLink]="['/stock/list']" routerLinkActive="active" 
-        [routerLinkActiveOptions]="{exact: true}">Stock Item List</a>
-      </li>
-      <li>
-        <a href="#">Admin Actions</a>
-      </li>
-    </ul>
+    <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+        <ul class="nav navbar-nav">
+          <li>
+            <a [routerLink]="['/stock/list']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Stock Item List</a>
+          </li>
+          <li>
+            <a href="#">Admin Actions</a>
+          </li>
+          <li>
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+    </nav>
   </div>
-</nav> 
+</nav>
 
