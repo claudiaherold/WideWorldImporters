@@ -1,15 +1,16 @@
 <div class="col-md-12">
 
-<h1>Hi {{currentUser.firstName}}!</h1>
- <p class="homeText">{{homeText}}</p>
-
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul>
+  <p class="homeText">{{homeText}}</p>
+<h1>Home</h1>
+<p>You're logged in</p>
+<p>Your role is: <strong>{{currentUser.role}}</strong>.</p>
+<p>This page can be accessed by all authenticated users.</p>
+<div>
+    Current user from secure api end point:
+    <ul>
+        <li *ngIf="userFromApi">{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+    </ul>
+</div>
 
 </div>
 
