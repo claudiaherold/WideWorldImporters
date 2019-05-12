@@ -8,6 +8,7 @@ import { UserService, AuthenticationService } from '@app/_services';
 export class HomeComponent {
     currentUser: User;
     userFromApi: any;
+    homeText = 'Home';
 
     constructor(
         private userService: UserService,
@@ -16,6 +17,10 @@ export class HomeComponent {
         this.currentUser = this.authenticationService.currentUserValue;
     }
 
+    public executeSelectedChange = (event) => {
+      console.log(event);
+    }
+// tslint:disable-next-line: use-life-cycle-interface
     ngOnInit() {
         this.userService.getById(this.currentUser.id).pipe(first()).subscribe(user => {
             this.userFromApi = user;

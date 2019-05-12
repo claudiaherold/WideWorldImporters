@@ -1,4 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files
+•	deeppurple-amber.css
+•	indigo-pink.css
+•	pink-blugrey.css
+•	purple-green.css
+*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* for sidenav to take whole page */
+html, body {
+    margin: 0;
+    height: 100%;
+}
 .ui-widget-header {
     color: #564040;
 }

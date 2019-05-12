@@ -16,11 +16,11 @@ export class ErrorInterceptor implements HttpInterceptor {
             // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
           this.authenticationService.logout();
 // tslint:disable-next-line: deprecation
-            location.reload(true);
+          location.reload(true);
         }
 
-            const error = err.error.message || err.statusText;
-            return throwError(error);
-        }))
+        const error = 'ERROR' ; // err.error.message || err.statusText;
+        return throwError(error);
+        }));
     }
 }

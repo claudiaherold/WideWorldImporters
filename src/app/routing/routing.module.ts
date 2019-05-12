@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './error-pages/not-found/not-found.component';
-import { InternalServerComponent } from './error-pages/internal-server/internal-server.component';
-import { AdminComponent } from './admin';
-import { LoginComponent } from './login';
-import { RegisterComponent } from './register' ;
-import { AuthGuard } from './_guards';
-import { Role } from './_models';
+import { HomeComponent } from '@app/home/home.component';
+import { NotFoundComponent } from '@app/error-pages/not-found/not-found.component';
+import { InternalServerComponent } from '@app/error-pages/internal-server/internal-server.component';
+import { AdminComponent } from '@app/admin';
+import { LoginComponent } from '@app/login';
+import { RegisterComponent } from '@app/register' ;
+import { AuthGuard } from '@app/_guards';
+import { Role } from '@app/_models';
 
 const routes: Routes = [];
 
@@ -37,4 +37,4 @@ const routes: Routes = [];
 })
 
 
-export class AppRoutingModule { }
+export class RoutingModule { }

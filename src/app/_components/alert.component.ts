@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class AlertComponent implements OnInit,  OnDestroy {
   private subscription: Subscription;
-  message: any;
+  message: any = '';
   constructor(private alertService: AlertService) { }
 
   ngOnInit() {
